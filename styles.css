@@ -300,7 +300,7 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.1; letter-spacing
 .hero__float--rating { left: -22px; bottom: 44px; }
 .hero__float--rating .stars { color: #f6b60b; letter-spacing: 2px; }
 .hero__float--rating span:last-child { font-size: .8rem; color: var(--muted); font-weight: 600; }
-.hero__float--exp { right: -18px; top: 40px; text-align: center; animation-delay: -2s; }
+.hero__float--exp { right: -18px; bottom: 120px; text-align: center; animation-delay: -2s; }
 .hero__float--exp strong { font-family: var(--font-head); font-size: 1.7rem; font-weight: 900; color: var(--red); }
 .hero__float--exp span { font-size: .74rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 @keyframes bob { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(-10px);} }
