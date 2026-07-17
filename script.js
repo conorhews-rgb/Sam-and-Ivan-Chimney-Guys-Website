@@ -5,6 +5,15 @@
 (function () {
   "use strict";
 
+  /* ---------- Always open at the top (no browser scroll restore) ---------- */
+  // Stops the browser from reopening the page wherever it was last scrolled to.
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  if (!location.hash) window.scrollTo(0, 0);
+  // Handle back/forward cache restores too.
+  window.addEventListener("pageshow", function (e) {
+    if (e.persisted && !location.hash) window.scrollTo(0, 0);
+  });
+
   /* ---------- Sticky header shadow ---------- */
   const header = document.getElementById("header");
   const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 10);
