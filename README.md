@@ -3,9 +3,28 @@
 A modern, rounded, fully-responsive one-page site in the brand's red / white / black colors.
 
 ## Files
-- `index.html` — page content & structure
-- `styles.css` — all styling, animations, hover effects, responsive layout
+- `index.html` — home page content & structure
+- `styles.css` — all styling, animations, hover effects, responsive layout (shared by every page)
 - `script.js` — scroll reveals, animated counters, sticky header, mobile menu, form handler
+- `services/*.html` — one landing page per service (generated, see below)
+- `build_services.py` — generator for the service pages
+
+## Service landing pages
+Each dropdown item (8 chimney services + 5 related services) has its own page under
+`services/`, all sharing the same header, footer, nav, and styling. They're linked from the
+nav dropdowns and the homepage service cards/pills.
+
+**To edit a service page's content** (heading, intro, benefits, warning signs, steps), open
+`build_services.py`, edit that service's entry in the `SERVICES` dict, then regenerate:
+
+```bash
+python3 build_services.py
+```
+
+This rewrites every file in `services/` from the data, so all pages stay perfectly
+consistent. Each hero has a "Photo coming soon" placeholder you can fill in the same way as
+the others (add a `style="background-image:url('../images/yourphoto.jpg'); ..."` on the
+`.service-hero__img` element).
 
 ## Run / preview locally
 Open `index.html` through a local server (the CSS/JS won't load from a bare `file://` on some browsers):
