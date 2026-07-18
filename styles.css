@@ -53,6 +53,14 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.1; letter-spacing
 .text-red { color: var(--red); }
 .ico { width: 1em; height: 1em; fill: currentColor; flex: none; }
 
+/* Custom themed icon set (replaces emoji) */
+.ico-svg {
+  width: 1em; height: 1em; display: inline-block; vertical-align: middle;
+  fill: none; stroke: currentColor; stroke-width: 1.9;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+.svg-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+
 /* ---------- Buttons ---------- */
 .btn {
   --btn-bg: var(--ink);
@@ -373,6 +381,10 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.1; letter-spacing
 /* ============================================================
    Related (pills)
    ============================================================ */
+/* Icon color contexts */
+.ico-badge, .why__ico, .contact__ico, .pill__ico { color: var(--red); }
+.pill:hover .pill__ico { color: #fff; }
+
 .pills { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
 .pill {
   display: inline-flex; align-items: center; gap: .7rem; font-family: var(--font-head); font-weight: 600;

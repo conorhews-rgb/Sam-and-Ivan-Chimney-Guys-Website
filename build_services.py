@@ -281,6 +281,55 @@ SERVICES = {
 
 PHONE_TEL = "19783207778"
 
+# Themed inline icon sprite (replaces emoji). Included once per page.
+SPRITE = '''  <svg class="svg-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><defs>
+    <symbol id="i-fire" viewBox="0 0 24 24"><path d="M12 3c1.6 3 4.6 4.4 4.6 8.2A4.6 4.6 0 0 1 7.4 11c0-1.3.5-2.4 1.3-3.2.1 1.6 1 2.7 2 3C11 8 11 5.6 12 3Z"/></symbol>
+    <symbol id="i-air" viewBox="0 0 24 24"><path d="M3 8h9a2.2 2.2 0 1 0-2.2-2.2"/><path d="M3 12h13a2.2 2.2 0 1 1-2.2 2.2"/><path d="M3 16h7"/></symbol>
+    <symbol id="i-heat" viewBox="0 0 24 24"><path d="M7 16c-.9-1 .7-2 0-3.4M12 16c-.9-1 .7-2 0-3.4M17 16c-.9-1 .7-2 0-3.4"/><path d="M5 20h14"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.2-3 7.4-7 8.8C8 18.4 5 15.2 5 11V6z"/><path d="M9.3 11.8l1.8 1.8 3.6-3.8"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11l8-7 8 7"/><path d="M6 9.5V20h12V9.5"/><path d="M10 20v-5h4v5"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M8 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2"/><path d="M9 3h6v3H9z"/><path d="M8.5 13l2.2 2.2L15 11"/></symbol>
+    <symbol id="i-brick" viewBox="0 0 24 24"><path d="M3 6h18v12H3z"/><path d="M3 12h18"/><path d="M9 6v6M15 6v6M6 12v6M12 12v6M18 12v6"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M6 6h12l1 3H5z"/><path d="M8 9v9h8V9"/></symbol>
+    <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 4.6a4 4 0 0 0-5 5.1L4 15.4V20h4.6l5.7-5.7a4 4 0 0 0 5.1-5l-2.7 2.7-2.4-.4-.3-2.3z"/></symbol>
+    <symbol id="i-build" viewBox="0 0 24 24"><path d="M3 18h18"/><path d="M5 16c0-4 3.1-7 7-7s7 3 7 7"/><path d="M10 16V9h4v7"/></symbol>
+    <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6"/><path d="M10 3v6l-4.6 7.4A2 2 0 0 0 7.1 20h9.8a2 2 0 0 0 1.7-3.1L14 9V3"/><path d="M7.7 15h8.6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3.5c3 3.9 6 6.6 6 10.1a6 6 0 0 1-12 0c0-3.5 3-6.2 6-10.1z"/></symbol>
+    <symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 2v20M2.5 7l19 10M21.5 7l-19 10"/></symbol>
+    <symbol id="i-money" viewBox="0 0 24 24"><path d="M3 7h18v10H3z"/><circle cx="12" cy="12" r="2.2"/><path d="M6.5 9v6M17.5 9v6"/></symbol>
+    <symbol id="i-rain" viewBox="0 0 24 24"><path d="M7 14a4 4 0 0 1 .4-8 5 5 0 0 1 9.4 1.4A3.6 3.6 0 0 1 16.5 14H7z"/><path d="M8 17l-1 2.5M12 17l-1 2.5M16 17l-1 2.5"/></symbol>
+    <symbol id="i-paw" viewBox="0 0 24 24"><ellipse cx="8" cy="8.5" rx="1.5" ry="2"/><ellipse cx="12" cy="7" rx="1.6" ry="2.1"/><ellipse cx="16" cy="8.5" rx="1.5" ry="2"/><path d="M8.4 13.2a3.6 3.6 0 0 1 7.2 0c0 2-1.7 3.3-3.6 3.3s-3.6-1.3-3.6-3.3z"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M4 20c-.5-8 5.5-14 16-14 .5 10-5.5 15.5-16 14z"/><path d="M5 19c4-6 8-8.5 12-9.5"/></symbol>
+    <symbol id="i-column" viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M4 9h16"/><path d="M12 3l8 6H4z"/><path d="M7 9v11M12 9v11M17 9v11"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M11 3l1.7 4.6L17 9l-4.3 1.4L11 15l-1.7-4.6L5 9l4.3-1.4z"/><path d="M18 14l.8 2.2L21 17l-2.2.8L18 20l-.8-2.2L15 17l2.2-.8z"/></symbol>
+    <symbol id="i-log" viewBox="0 0 24 24"><path d="M6 7h9a5 5 0 0 1 0 10H6a5 5 0 0 1 0-10z"/><path d="M15 7a5 5 0 0 1 0 10M15 9.5a2.5 2.5 0 0 1 0 5"/></symbol>
+    <symbol id="i-brush" viewBox="0 0 24 24"><path d="M4 5h12v4H4z"/><path d="M16 6h2a1.5 1.5 0 0 1 1.5 1.5v2A1.5 1.5 0 0 1 18 11h-6a1.5 1.5 0 0 0-1.5 1.5V14"/><path d="M9.5 14h3v7h-3z"/></symbol>
+    <symbol id="i-mold" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 16 0z"/><path d="M10 12v3.5a2 2 0 0 0 4 0V12"/></symbol>
+    <symbol id="i-grain" viewBox="0 0 24 24"><path d="M12 21V8"/><path d="M12 12c-2.4-.6-3.6-2.4-3-4.8 2.4.6 3.6 2.4 3 4.8z"/><path d="M12 12c2.4-.6 3.6-2.4 3-4.8-2.4.6-3.6 2.4-3 4.8z"/><path d="M12 17c-2.4-.6-3.6-2.4-3-4.8 2.4.6 3.6 2.4 3 4.8z"/><path d="M12 17c2.4-.6 3.6-2.4 3-4.8-2.4.6-3.6 2.4-3 4.8z"/></symbol>
+    <symbol id="i-stone" viewBox="0 0 24 24"><path d="M3 18l5.5-8.5 3.5 4.5 3-5L21 18z"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.5 3h3l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16 16 0 0 1 4.5 5.2 2 2 0 0 1 6.5 3z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.2l3.2 2"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l1.4-2h7L17 8h3v11H4z"/><circle cx="12" cy="12.5" r="3"/></symbol>
+  </defs></svg>'''
+
+# Maps the emoji used in the SERVICES data to a themed icon id.
+EMOJI_ICON = {
+    "🔥": "i-fire", "🌬️": "i-air", "♨️": "i-heat", "🛡️": "i-shield",
+    "🔍": "i-search", "🏠": "i-home", "🧯": "i-shield", "📋": "i-doc",
+    "🧱": "i-brick", "🎩": "i-cap", "🔧": "i-wrench", "🏗️": "i-build",
+    "🧪": "i-flask", "✅": "i-check", "💧": "i-drop", "❄️": "i-snow",
+    "💵": "i-money", "🌧️": "i-rain", "🐿️": "i-paw", "🍂": "i-leaf",
+    "🏛️": "i-column", "✨": "i-sparkle", "🪵": "i-log", "🎨": "i-brush",
+    "🍄": "i-mold", "🌾": "i-grain", "🛠️": "i-wrench", "🪨": "i-stone",
+}
+
+def icon(emoji):
+    name = EMOJI_ICON.get(emoji, "i-check")
+    return f'<svg class="ico-svg"><use href="#{name}"></use></svg>'
+
 def dropdown_items(items, active_slug):
     rows = []
     for label, slug in items:
@@ -303,7 +352,7 @@ def build_page(slug, data):
 
     features_html = "\n".join(
         f'''          <article class="feature-card reveal">
-            <div class="ico-badge">{ic}</div>
+            <div class="ico-badge">{icon(ic)}</div>
             <h3>{t}</h3>
             <p>{p}</p>
           </article>''' for ic, t, p in data["features"])
@@ -329,9 +378,11 @@ def build_page(slug, data):
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../styles.css?v=6" />
+  <link rel="stylesheet" href="../styles.css?v=7" />
 </head>
 <body>
+
+{SPRITE}
 
   <div class="topbar" id="topbar">
     <div class="container topbar__inner">
@@ -453,7 +504,7 @@ def build_page(slug, data):
             <h3>Free, no-pressure estimate</h3>
             <p>Tell us what's going on and we'll get right back to you, usually same day.</p>
             <a href="../index.html#contact" class="btn btn--primary">Request an Estimate</a>
-            <a href="tel:{PHONE_TEL}" class="aside-phone">📞 978-320-7778</a>
+            <a href="tel:{PHONE_TEL}" class="aside-phone"><svg class="ico-svg"><use href="#i-phone"></use></svg> 978-320-7778</a>
           </div>
           <div class="aside-card aside-card--links">
             <h3>{cat_label}</h3>
@@ -520,7 +571,7 @@ def build_page(slug, data):
     <svg viewBox="0 0 24 24" class="ico"><path d="M6.6 10.8a15.5 15.5 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11.3 11.3 0 003.5.56 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.3 11.3 0 00.56 3.5 1 1 0 01-.24 1z"/></svg>
   </a>
 
-  <script src="../script.js?v=6"></script>
+  <script src="../script.js?v=7"></script>
 </body>
 </html>
 '''
