@@ -133,6 +133,30 @@
     });
   }
 
+  /* ---------- Interactive chimney anatomy ---------- */
+  const anatomy = document.querySelector(".anatomy");
+  if (anatomy) {
+    const zones = anatomy.querySelectorAll(".a-zone[data-part]");
+    const parts = anatomy.querySelectorAll(".a-part[data-part]");
+
+    const activate = (name) => {
+      zones.forEach((z) => z.classList.toggle("active", z.dataset.part === name));
+      parts.forEach((p) => p.classList.toggle("active", p.dataset.part === name));
+    };
+
+    [...zones, ...parts].forEach((el) => {
+      el.addEventListener("mouseenter", () => activate(el.dataset.part));
+      // Tap support on touch devices (links inside still navigate normally).
+      el.addEventListener("click", (e) => {
+        if (e.target.closest("a")) return;
+        activate(el.dataset.part);
+      });
+    });
+
+    // Start with the flue liner lit, like a fire's just been burning.
+    activate("flue");
+  }
+
   /* ---------- Footer year ---------- */
   const yr = document.getElementById("year");
   if (yr) yr.textContent = new Date().getFullYear();

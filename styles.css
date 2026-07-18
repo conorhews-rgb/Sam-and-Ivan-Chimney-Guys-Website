@@ -560,6 +560,72 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.1; letter-spacing
 }
 
 /* ============================================================
+   Interactive chimney anatomy (homepage services section)
+   ============================================================ */
+.anatomy .section__head { margin-bottom: clamp(2rem, 4vw, 3rem); }
+.anatomy__grid {
+  display: grid; grid-template-columns: .9fr 1.1fr;
+  gap: clamp(2rem, 5vw, 4.5rem); align-items: center;
+}
+.anatomy__visual { display: grid; place-items: center; }
+.anatomy__svg { width: min(100%, 380px); height: auto; overflow: visible; }
+
+/* Base shapes */
+.a-shape { fill: #262a33; stroke: rgba(255,255,255,.16); stroke-width: 1.5; transition: fill .35s var(--ease), stroke .35s var(--ease); }
+.a-inner { fill: #171a20; stroke: rgba(255,255,255,.10); stroke-width: 1.5; transition: fill .35s var(--ease), stroke .35s var(--ease); }
+.a-brick { stroke: rgba(255,255,255,.08); stroke-width: 1.5; }
+.a-hatch { stroke: rgba(255,255,255,.10); stroke-width: 1.5; }
+.a-roof { fill: none; stroke: rgba(255,255,255,.22); stroke-width: 5; stroke-linecap: round; }
+.a-ground { stroke: rgba(255,255,255,.22); stroke-width: 2; stroke-dasharray: 7 8; stroke-linecap: round; }
+
+/* Flame + ember */
+.a-flame { fill: var(--red-soft); transform-origin: 170px 446px; animation: flameFlicker 1.6s ease-in-out infinite; }
+.a-flame--2 { fill: #ffb35c; animation-delay: -.8s; transform-origin: 163px 446px; }
+@keyframes flameFlicker { 0%,100% { transform: scaleY(1) } 50% { transform: scaleY(1.14) scaleX(.94) } }
+.a-ember { fill: var(--red-soft); opacity: .9; animation: emberPulse 2.4s ease-in-out infinite; }
+@keyframes emberPulse { 0%,100% { opacity: .45; r: 4 } 50% { opacity: 1; r: 6 } }
+
+/* Hoverable zones */
+.a-zone { cursor: pointer; }
+.a-zone * { pointer-events: all; }
+.a-zone.active .a-shape { fill: rgba(216,31,42,.26); stroke: var(--red-soft); }
+.a-zone.active .a-inner { fill: rgba(216,31,42,.14); stroke: rgba(255,59,71,.55); }
+.a-zone.active { filter: drop-shadow(0 0 14px rgba(255,59,71,.45)); }
+
+/* Numbered list */
+.anatomy__list { display: flex; flex-direction: column; }
+.a-part {
+  position: relative; padding: .95rem 1.1rem .95rem 2.4rem; border-radius: var(--r-md);
+  cursor: pointer; border: 1px solid transparent;
+  transition: background .35s var(--ease), border-color .35s var(--ease);
+}
+.a-part__num {
+  position: absolute; left: .9rem; top: 1.05rem;
+  font-family: var(--font-head); font-weight: 800; font-size: .8rem; color: var(--red-soft);
+  opacity: .65; transition: opacity .3s var(--ease);
+}
+.a-part__title {
+  font-size: 1.05rem; color: rgba(255,255,255,.45); letter-spacing: .04em;
+  transition: color .3s var(--ease);
+}
+.a-part__body { max-height: 0; overflow: hidden; opacity: 0; transition: max-height .5s var(--ease), opacity .4s var(--ease); }
+.a-part__body p { color: rgba(255,255,255,.68); font-size: .95rem; margin-top: .55rem; }
+.a-part__fix { font-family: var(--font-head); font-weight: 600; }
+.a-part__fix a { color: var(--red-soft); border-bottom: 1px solid rgba(255,59,71,.4); transition: color .25s var(--ease), border-color .25s var(--ease); }
+.a-part__fix a:hover { color: #fff; border-color: #fff; }
+.a-part.active { background: rgba(255,255,255,.05); border-color: rgba(255,59,71,.35); }
+.a-part.active .a-part__num { opacity: 1; }
+.a-part.active .a-part__title { color: #fff; }
+.a-part.active .a-part__body { max-height: 220px; opacity: 1; }
+.anatomy__cta { margin-top: 1.6rem; align-self: flex-start; }
+
+@media (max-width: 900px) {
+  .anatomy__grid { grid-template-columns: 1fr; }
+  .anatomy__svg { width: min(100%, 300px); }
+  .anatomy__cta { align-self: stretch; }
+}
+
+/* ============================================================
    Service landing pages (subpages)
    ============================================================ */
 .dropdown a.is-current { color: var(--red); background: var(--paper); }

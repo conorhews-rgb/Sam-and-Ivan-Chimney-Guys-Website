@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="stylesheet" href="styles.css?v=5" />
 </head>
 <body>
 
@@ -188,62 +188,126 @@
     </section>
 
     <!-- ===== CHIMNEY SERVICES ===== -->
-    <section class="services section section--tint" id="services">
+    <section class="services anatomy section section--dark" id="services">
       <div class="container">
         <div class="section__head reveal">
-          <span class="eyebrow">Chimney Services</span>
-          <h2 class="section__title">Everything your chimney needs</h2>
-          <p class="section__sub">From routine sweeps to full masonry rebuilds, one certified team handles it all.</p>
+          <span class="eyebrow eyebrow--light">Chimney Services</span>
+          <h2 class="section__title section__title--light">Everything your chimney needs</h2>
+          <p class="section__sub">Hover over each part of the chimney to see what can go wrong there, and how we fix it.</p>
         </div>
-        <div class="cards">
-          <a class="card reveal" href="services/chimney-cleaning.html">
-            <div class="card__icon">🧹</div>
-            <h3>Chimney Cleaning</h3>
-            <p>Thorough removal of creosote and debris to prevent chimney fires and keep your home breathing safely.</p>
-            <span class="card__more">Learn more</span>
-          </a>
-          <a class="card reveal" href="services/chimney-inspection.html">
-            <div class="card__icon">🔍</div>
-            <h3>Chimney Inspection</h3>
-            <p>Detailed structural and safety inspections that catch small problems before they become costly ones.</p>
-            <span class="card__more">Learn more</span>
-          </a>
-          <a class="card reveal" href="services/chimney-installation-repair.html">
-            <div class="card__icon">🧱</div>
-            <h3>Installation &amp; Repair</h3>
-            <p>Expert chimney installation and repair to restore safety, function, and curb appeal.</p>
-            <span class="card__more">Learn more</span>
-          </a>
-          <a class="card reveal" href="services/chimney-liner-installation.html">
-            <div class="card__icon">🛡️</div>
-            <h3>Chimney Liner Installation</h3>
-            <p>Stainless liners sized and installed to protect your flue and improve draft and efficiency.</p>
-            <span class="card__more">Learn more</span>
-          </a>
-          <a class="card reveal" href="services/chimney-waterproofing-sealing.html">
-            <div class="card__icon">💧</div>
-            <h3>Waterproofing &amp; Sealing</h3>
-            <p>Breathable sealants that lock out moisture, the #1 cause of chimney deterioration.</p>
-            <span class="card__more">Learn more</span>
-          </a>
-          <a class="card reveal" href="services/damper-caps-chase-covers.html">
-            <div class="card__icon">🎩</div>
-            <h3>Damper Caps &amp; Chase Covers</h3>
-            <p>Custom caps and covers that keep rain, animals, and debris out of your chimney for good.</p>
-            <span class="card__more">Learn more</span>
-          </a>
-          <a class="card reveal" href="services/fireplace-masonry-repair.html">
-            <div class="card__icon">🔥</div>
-            <h3>Fireplace Masonry &amp; Repair</h3>
-            <p>Skilled brick, block, and mortar work to rebuild and beautify your fireplace and chimney.</p>
-            <span class="card__more">Learn more</span>
-          </a>
-          <a class="card reveal" href="services/flashing-repair.html">
-            <div class="card__icon">⚡</div>
-            <h3>Flashing Repair</h3>
-            <p>Watertight flashing repair where your chimney meets the roof to stop leaks at the source.</p>
-            <span class="card__more">Learn more</span>
-          </a>
+        <div class="anatomy__grid">
+          <!-- Interactive chimney illustration -->
+          <div class="anatomy__visual reveal" aria-hidden="true">
+            <svg viewBox="0 0 340 600" class="anatomy__svg" role="img" aria-label="Diagram of a chimney from cap to foundation">
+              <!-- Roof -->
+              <polyline points="24,340 134,232" class="a-roof" />
+              <polyline points="206,232 316,340" class="a-roof" />
+
+              <!-- Below the grade -->
+              <g class="a-zone" data-part="below">
+                <rect x="112" y="466" width="116" height="66" rx="6" class="a-shape" />
+                <line x1="122" y1="480" x2="150" y2="522" class="a-hatch" />
+                <line x1="146" y1="476" x2="178" y2="524" class="a-hatch" />
+                <line x1="172" y1="476" x2="204" y2="524" class="a-hatch" />
+                <line x1="198" y1="476" x2="220" y2="510" class="a-hatch" />
+              </g>
+              <line x1="36" y1="470" x2="304" y2="470" class="a-ground" />
+
+              <!-- Firebox & hearth -->
+              <g class="a-zone" data-part="firebox">
+                <rect x="100" y="368" width="140" height="84" rx="8" class="a-shape" />
+                <path d="M132 452 v-40 a38 34 0 0 1 76 0 v40 z" class="a-inner" />
+                <rect x="84" y="452" width="172" height="14" rx="5" class="a-shape" />
+                <path class="a-flame" d="M170 446 c-10 -12 -2 -22 0 -32 c8 10 12 20 4 32 z" />
+                <path class="a-flame a-flame--2" d="M162 446 c-6 -8 -1 -14 1 -20 c5 6 7 13 2 20 z" />
+              </g>
+
+              <!-- Smoke chamber & damper -->
+              <g class="a-zone" data-part="smoke">
+                <polygon points="134,304 206,304 240,368 100,368" class="a-shape" />
+                <rect x="150" y="322" width="40" height="8" rx="4" class="a-inner" />
+              </g>
+
+              <!-- Roofline & flashing -->
+              <g class="a-zone" data-part="flashing">
+                <polygon points="134,226 134,262 112,244" class="a-shape" />
+                <polygon points="206,226 206,262 228,244" class="a-shape" />
+              </g>
+
+              <!-- Flue liner (inside the shaft) -->
+              <g class="a-zone" data-part="flue">
+                <rect x="134" y="64" width="72" height="240" rx="4" class="a-shape" />
+                <line x1="134" y1="104" x2="206" y2="104" class="a-brick" />
+                <line x1="134" y1="144" x2="206" y2="144" class="a-brick" />
+                <line x1="134" y1="184" x2="206" y2="184" class="a-brick" />
+                <line x1="134" y1="224" x2="206" y2="224" class="a-brick" />
+                <line x1="134" y1="264" x2="206" y2="264" class="a-brick" />
+                <rect x="152" y="74" width="36" height="222" rx="4" class="a-inner" />
+                <circle cx="170" cy="164" r="5" class="a-ember" />
+              </g>
+
+              <!-- Cap & crown -->
+              <g class="a-zone" data-part="cap">
+                <rect x="122" y="26" width="96" height="12" rx="5" class="a-shape" />
+                <rect x="134" y="38" width="8" height="12" class="a-shape" />
+                <rect x="198" y="38" width="8" height="12" class="a-shape" />
+                <rect x="126" y="50" width="88" height="14" rx="4" class="a-shape" />
+              </g>
+            </svg>
+          </div>
+
+          <!-- Numbered part list -->
+          <div class="anatomy__list reveal">
+            <div class="a-part" data-part="cap">
+              <span class="a-part__num">1</span>
+              <h3 class="a-part__title">Cap &amp; Crown</h3>
+              <div class="a-part__body">
+                <p>Your chimney's first line of defense. A missing cap invites rain, animals, and debris straight in, and a cracked crown lets water slowly tear the masonry apart.</p>
+                <p class="a-part__fix">The fix: <a href="services/damper-caps-chase-covers.html">caps &amp; chase covers</a> &amp; <a href="services/chimney-waterproofing-sealing.html">waterproofing</a>.</p>
+              </div>
+            </div>
+            <div class="a-part" data-part="flue">
+              <span class="a-part__num">2</span>
+              <h3 class="a-part__title">The Flue Liner</h3>
+              <div class="a-part__body">
+                <p>Creosote condenses on these walls every time you burn. An eighth of an inch is enough to ignite, and cracked tiles can leak carbon monoxide into the rooms you sleep in.</p>
+                <p class="a-part__fix">The fix: <a href="services/chimney-cleaning.html">sweeping</a> &amp; <a href="services/chimney-liner-installation.html">stainless liner installation</a>.</p>
+              </div>
+            </div>
+            <div class="a-part" data-part="flashing">
+              <span class="a-part__num">3</span>
+              <h3 class="a-part__title">Roofline &amp; Flashing</h3>
+              <div class="a-part__body">
+                <p>Where the chimney meets the roof is where most "roof leaks" actually start. Lifted or rusted flashing lets water into your ceilings, walls, and framing.</p>
+                <p class="a-part__fix">The fix: <a href="services/flashing-repair.html">flashing repair</a> &amp; <a href="services/chimney-installation-repair.html">chimney repair</a>.</p>
+              </div>
+            </div>
+            <div class="a-part" data-part="smoke">
+              <span class="a-part__num">4</span>
+              <h3 class="a-part__title">Smoke Chamber &amp; Damper</h3>
+              <div class="a-part__body">
+                <p>A rusted or stuck damper bleeds your home's heat all winter, and a cracked smoke chamber gives fire a shortcut to the structure around it.</p>
+                <p class="a-part__fix">The fix: <a href="services/chimney-inspection.html">inspection</a> &amp; <a href="services/chimney-installation-repair.html">installation &amp; repair</a>.</p>
+              </div>
+            </div>
+            <div class="a-part" data-part="firebox">
+              <span class="a-part__num">5</span>
+              <h3 class="a-part__title">Firebox &amp; Hearth</h3>
+              <div class="a-part__body">
+                <p>Cracked firebrick and crumbling mortar joints put open flame inches from your home's framing. This is where craftsmanship matters most.</p>
+                <p class="a-part__fix">The fix: <a href="services/fireplace-masonry-repair.html">fireplace masonry &amp; repair</a>.</p>
+              </div>
+            </div>
+            <div class="a-part" data-part="below">
+              <span class="a-part__num">6</span>
+              <h3 class="a-part__title">Below the Grade</h3>
+              <div class="a-part__body">
+                <p>Water wicking up from the base undermines everything above it. A damp foundation cracks, shifts, and takes the whole chimney with it.</p>
+                <p class="a-part__fix">The fix: <a href="services/foundation-waterproofing-repair.html">foundation waterproofing &amp; repair</a>.</p>
+              </div>
+            </div>
+            <a href="#contact" class="btn btn--primary btn--lg anatomy__cta">Book the Full Top-to-Bottom Look</a>
+          </div>
         </div>
       </div>
     </section>
@@ -487,6 +551,6 @@
     <svg viewBox="0 0 24 24" class="ico"><path d="M6.6 10.8a15.5 15.5 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11.3 11.3 0 003.5.56 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.3 11.3 0 00.56 3.5 1 1 0 01-.24 1z"/></svg>
   </a>
 
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>
