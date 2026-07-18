@@ -5,14 +5,21 @@
 (function () {
   "use strict";
 
-  /* ---------- Always open at the top (no browser scroll restore) ---------- */
-  // Stops the browser from reopening the page wherever it was last scrolled to.
+  /* ---------- Always open at the top ---------- */
+  // Mobile Safari can apply its native "scroll to #hash" behavior late, after
+  // layout settles, which wins over a single early scrollTo(0,0). Reassert it
+  // at every stage of the load lifecycle so it always wins, and drop the hash
+  // so a tab that iOS reloads later (after being suspended) opens clean.
   if ("scrollRestoration" in history) history.scrollRestoration = "manual";
-  if (!location.hash) window.scrollTo(0, 0);
-  // Handle back/forward cache restores too.
-  window.addEventListener("pageshow", function (e) {
-    if (e.persisted && !location.hash) window.scrollTo(0, 0);
-  });
+  if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+
+  function forceTop() { window.scrollTo(0, 0); }
+  forceTop();
+  document.addEventListener("DOMContentLoaded", forceTop);
+  window.addEventListener("load", forceTop);
+  window.addEventListener("pageshow", forceTop);
+  setTimeout(forceTop, 0);
+  setTimeout(forceTop, 300);
 
   /* ---------- Sticky header shadow ---------- */
   const header = document.getElementById("header");
