@@ -138,10 +138,18 @@
   if (anatomy) {
     const zones = anatomy.querySelectorAll(".a-zone[data-part]");
     const parts = anatomy.querySelectorAll(".a-part[data-part]");
+    const ember = anatomy.querySelector(".a-ember");
 
     const activate = (name) => {
       zones.forEach((z) => z.classList.toggle("active", z.dataset.part === name));
       parts.forEach((p) => p.classList.toggle("active", p.dataset.part === name));
+      // Move the glowing ember to the center of the active chimney zone.
+      const zone = anatomy.querySelector('.a-zone[data-part="' + name + '"]');
+      if (ember && zone) {
+        const b = zone.getBBox();
+        ember.setAttribute("cx", b.x + b.width / 2);
+        ember.setAttribute("cy", b.y + b.height / 2);
+      }
     };
 
     [...zones, ...parts].forEach((el) => {

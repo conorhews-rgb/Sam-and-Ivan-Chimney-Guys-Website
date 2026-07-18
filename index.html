@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=5" />
+  <link rel="stylesheet" href="styles.css?v=6" />
 </head>
 <body>
 
@@ -228,12 +228,6 @@
                 <rect x="150" y="322" width="40" height="8" rx="4" class="a-inner" />
               </g>
 
-              <!-- Roofline & flashing -->
-              <g class="a-zone" data-part="flashing">
-                <polygon points="134,226 134,262 112,244" class="a-shape" />
-                <polygon points="206,226 206,262 228,244" class="a-shape" />
-              </g>
-
               <!-- Flue liner (inside the shaft) -->
               <g class="a-zone" data-part="flue">
                 <rect x="134" y="64" width="72" height="240" rx="4" class="a-shape" />
@@ -243,7 +237,16 @@
                 <line x1="134" y1="224" x2="206" y2="224" class="a-brick" />
                 <line x1="134" y1="264" x2="206" y2="264" class="a-brick" />
                 <rect x="152" y="74" width="36" height="222" rx="4" class="a-inner" />
-                <circle cx="170" cy="164" r="5" class="a-ember" />
+              </g>
+
+              <!-- Roofline & flashing (drawn over the shaft base so the metal collar reads clearly) -->
+              <g class="a-zone" data-part="flashing">
+                <!-- step flashing running down each side of the roof seam -->
+                <polygon points="134,222 92,262 104,276 138,244" class="a-shape a-flash" />
+                <polygon points="206,222 248,262 236,276 202,244" class="a-shape a-flash" />
+                <!-- metal collar wrapping the chimney at the roofline -->
+                <rect x="122" y="224" width="96" height="20" rx="4" class="a-shape a-flash" />
+                <line x1="130" y1="234" x2="210" y2="234" class="a-flash-line" />
               </g>
 
               <!-- Cap & crown -->
@@ -253,6 +256,9 @@
                 <rect x="198" y="38" width="8" height="12" class="a-shape" />
                 <rect x="126" y="50" width="88" height="14" rx="4" class="a-shape" />
               </g>
+
+              <!-- Spotlight ember: JS moves it to whichever section is active -->
+              <circle cx="170" cy="164" r="6" class="a-ember" />
             </svg>
           </div>
 
@@ -551,6 +557,6 @@
     <svg viewBox="0 0 24 24" class="ico"><path d="M6.6 10.8a15.5 15.5 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11.3 11.3 0 003.5.56 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.3 11.3 0 00.56 3.5 1 1 0 01-.24 1z"/></svg>
   </a>
 
-  <script src="script.js?v=5"></script>
+  <script src="script.js?v=6"></script>
 </body>
 </html>

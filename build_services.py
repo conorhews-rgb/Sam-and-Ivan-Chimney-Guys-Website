@@ -329,7 +329,7 @@ def build_page(slug, data):
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../styles.css?v=5" />
+  <link rel="stylesheet" href="../styles.css?v=6" />
 </head>
 <body>
 
@@ -520,7 +520,7 @@ def build_page(slug, data):
     <svg viewBox="0 0 24 24" class="ico"><path d="M6.6 10.8a15.5 15.5 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11.3 11.3 0 003.5.56 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.3 11.3 0 00.56 3.5 1 1 0 01-.24 1z"/></svg>
   </a>
 
-  <script src="../script.js?v=5"></script>
+  <script src="../script.js?v=6"></script>
 </body>
 </html>
 '''

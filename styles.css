@@ -578,12 +578,21 @@ h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.1; letter-spacing
 .a-roof { fill: none; stroke: rgba(255,255,255,.22); stroke-width: 5; stroke-linecap: round; }
 .a-ground { stroke: rgba(255,255,255,.22); stroke-width: 2; stroke-dasharray: 7 8; stroke-linecap: round; }
 
+/* Flashing: a distinct metallic band so it's obvious as its own section */
+.a-flash { fill: #5b6473; stroke: rgba(255,255,255,.35); stroke-width: 1.5; transition: fill .35s var(--ease), stroke .35s var(--ease); }
+.a-flash-line { stroke: rgba(255,255,255,.28); stroke-width: 1.5; }
+
 /* Flame + ember */
 .a-flame { fill: var(--red-soft); transform-origin: 170px 446px; animation: flameFlicker 1.6s ease-in-out infinite; }
 .a-flame--2 { fill: #ffb35c; animation-delay: -.8s; transform-origin: 163px 446px; }
 @keyframes flameFlicker { 0%,100% { transform: scaleY(1) } 50% { transform: scaleY(1.14) scaleX(.94) } }
-.a-ember { fill: var(--red-soft); opacity: .9; animation: emberPulse 2.4s ease-in-out infinite; }
-@keyframes emberPulse { 0%,100% { opacity: .45; r: 4 } 50% { opacity: 1; r: 6 } }
+.a-ember {
+  fill: var(--red-soft); opacity: .95; pointer-events: none;
+  filter: drop-shadow(0 0 8px rgba(255,59,71,.9));
+  transition: cx .55s var(--ease), cy .55s var(--ease);
+  animation: emberPulse 2.4s ease-in-out infinite;
+}
+@keyframes emberPulse { 0%,100% { opacity: .55; r: 5 } 50% { opacity: 1; r: 7 } }
 
 /* Hoverable zones */
 .a-zone { cursor: pointer; }
