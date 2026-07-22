@@ -470,8 +470,8 @@ def build_page(slug, data):
               </a>
             </div>
           </div>
-          <div class="service-hero__img image-frame reveal" data-photo="{data["photo"]}">
-            <span class="frame__label">Photo coming soon</span>
+          <div class="service-hero__img image-frame reveal" data-photo="{data["photo"]}"
+               style="background-image:url('../images/svc-{slug}.jpg'); background-size:cover; background-position:center;">
           </div>
         </div>
       </div>
